@@ -53,7 +53,7 @@
       var action = $("#action").val();
       var sdkToken = $("#sdkToken").val();
       var userToken = $("#userToken").val();
-      var ws = new WebSocket(`ws://127.0.0.1/live?action=${action}&sdkToken=${sdkToken}&userToken=${userToken}`);
+      var ws = new WebSocket(`ws://localhost:3000/live?action=${action}&sdkToken=${sdkToken}&userToken=${userToken}`);
       ws.onmessage = function (str) {
         console.log("Someone sent: ", str);
         $("#monitor").append("<h1>" + str.data + "</h1>");

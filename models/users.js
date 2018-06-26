@@ -18,8 +18,7 @@ module.exports = {
     let values = [sdkToken];
     return db
       .query(queryString, values)
-      .then(() => [true])
-      .catch(err => [false, err]);
-
+      .then(({ rows }) => [rows[0],err])
+      .catch(err => [{}, err]);
   }
 };
